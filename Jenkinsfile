@@ -9,13 +9,13 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/Yaswanthsettipalli/ci-cd-microproject.git'
+                git branch: 'main', url: 'https://github.com/Yaswanthsettipalli/ci-cd-microproject.git'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
 
